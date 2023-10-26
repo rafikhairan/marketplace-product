@@ -13,6 +13,12 @@
     </button>
   </div>
 
+  <button type="button" class="rounded-full fixed bottom-10 right-10 h-12 w-12 transition duration-200 hidden bg-[#0b7c56] hover:bg-[#085843]" id="scroll-top">
+    <svg class="w-5 h-5 text-white m-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"/>
+    </svg>
+  </button>
+
   <footer class="bg-gray-100 mt-20">
     <div class="mx-auto w-full max-w-screen-xl py-6 lg:py-8">
       <div class="md:flex md:justify-between py-6">
@@ -83,5 +89,6 @@
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+  <script src="<?= BASEURL . "/js/main.js"; ?>"></script>
 </body>
 </html>
