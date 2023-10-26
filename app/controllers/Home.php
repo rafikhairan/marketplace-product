@@ -5,8 +5,8 @@
     {
       $data['title'] = 'Home';
 
-      $this->view('layouts/header', $data);
+      $this->view('layout/header', $data);
       $this->view('home/index');
-      $this->view('layouts/footer');
+      $this->view('layout/footer');
     }
   }

@@ -18,29 +18,20 @@
         </a>
         <ul class="hidden lg:flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 bg-[#0b7c56] rounded md:bg-transparent md:text-[#0b7c56] md:p-0">Home</a>
+            <a href="<?= BASEURL; ?>" class="block py-2 pl-3 pr-4 bg-[#0b7c56] rounded md:bg-transparent <?= $data['title'] === 'Home' ? 'md:text-[#0b7c56]' : 'text-gray-900'; ?> md:p-0">Home</a>
           </li>
           <li>
-            <a href="products.html?category=men_all" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0b7c56] md:p-0">Men</a>
+            <a href="<?= BASEURL; ?>/product/men" class="block py-2 pl-3 pr-4 <?= $data['title'] === 'Men' || (isset($data['product']['category_name']) && $data['product']['category_name'] === 'Men') ? 'md:text-[#0b7c56]' : 'text-gray-900'; ?> rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0b7c56] md:p-0">Men</a>
           </li>
           <li>
-            <a href="products.html?category=ladies_all" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0b7c56] md:p-0">Women</a>
+            <a href="<?= BASEURL; ?>/product/women" class="block py-2 pl-3 pr-4 <?= $data['title'] === 'Women' || (isset($data['product']['category_name']) && $data['product']['category_name'] === 'Women') ? 'md:text-[#0b7c56]' : 'text-gray-900'; ?> rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0b7c56] md:p-0">Women</a>
           </li>
           <li>
-            <a href="products.html?category=kids_all" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0b7c56] md:p-0">Kids</a>
+            <a href="<?= BASEURL; ?>/product/kid" class="block py-2 pl-3 pr-4 <?= $data['title'] === 'Kid' || (isset($data['product']['category_name']) && $data['product']['category_name'] === 'Kid') ? 'md:text-[#0b7c56]' : 'text-gray-900'; ?> rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-[#0b7c56] md:p-0">Kid</a>
           </li>
         </ul>
       </div>
       <div class="flex items-center">
-        <div class="relative hidden lg:block mr-6">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-            </svg>
-            <span class="sr-only">Search icon</span>
-          </div>
-          <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-500 border border-gray-300 rounded-lg bg-gray-50 focus:ring-0 focus:outline-none focus:border-gray-300" placeholder="Search..." />
-        </div>
         <ul class="flex items-center">
           <li class="cursor-pointer mr-6" data-drawer-target="drawer-right" data-drawer-show="drawer-right" data-drawer-placement="right" aria-controls="drawer-right">
             <svg class="w-5 h-5 fill-gray-900 hover:fill-[#0b7c56]" width="128" height="128" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -99,26 +90,18 @@
         </button>
       </div>
       <div class="flex flex-col w-full lg:hidden" id="navbar-search">
-        <div class="relative mt-3 lg:hidden">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
-            </svg>
-          </div>
-          <input type="text" id="search-navbar" class="block w-full p-2 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-0 focus:outline-none focus:border-gray-300" placeholder="Search..." />
-        </div>
         <ul class="flex w-full flex-col font-medium p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50">
           <li>
-            <a href="#" class="block py-2 pl-3 pr-4 text-white bg-[#0b7c56] rounded" aria-current="page">Home</a>
+            <a href="<?= BASEURL; ?>" class="block py-2 pl-3 pr-4 <?= $data['title'] === 'Home' ? 'bg-[#0b7c56] text-white' : 'text-gray-900 hover:bg-gray-100'; ?> rounded">Home</a>
           </li>
           <li>
-            <a href="products.html?category=men_all" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100">Men</a>
+            <a href="<?= BASEURL; ?>/product/men" class="block py-2 pl-3 pr-4 <?= $data['title'] === 'Men' | (isset($data['product']['category_name']) && $data['product']['category_name'] === 'Men') ? 'bg-[#0b7c56] text-white' : 'text-gray-900 hover:bg-gray-100'; ?> rounded">Men</a>
           </li>
           <li>
-            <a href="products.html?category=ladies_all" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100">Women</a>
+            <a href="<?= BASEURL; ?>/product/women" class="block py-2 pl-3 pr-4 <?= $data['title'] === 'Women' | (isset($data['product']['category_name']) && $data['product']['category_name'] === 'Women') ? 'bg-[#0b7c56] text-white' : 'text-gray-900 hover:bg-gray-100'; ?> rounded">Women</a>
           </li>
           <li>
-            <a href="products.html?category=kids_all" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100">Kids</a>
+            <a href="<?= BASEURL; ?>/product/kid" class="block py-2 pl-3 pr-4 <?= $data['title'] === 'Kid' | (isset($data['product']['category_name']) && $data['product']['category_name'] === 'Kid') ? 'bg-[#0b7c56] text-white' : 'text-gray-900 hover:bg-gray-100'; ?> rounded">Kid</a>
           </li>
         </ul>
       </div>
