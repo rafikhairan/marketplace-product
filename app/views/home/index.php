@@ -1,11 +1,11 @@
 <header>
-  <section class="max-w-screen-xl mx-auto rounded-xl h-[568px] bg-no-repeat bg-[url('./images/banner-3.jpg')] bg-gray-700 bg-cover bg-center bg-blend-multiply my-7 flex">
+  <section class="max-w-screen-xl mx-auto rounded-xl h-[568px] bg-no-repeat bg-[url('<?= BASEURL; ?>/images/banner.jpg')] bg-gray-700 bg-cover bg-center bg-blend-multiply my-7 flex">
     <div class="w-9/12 m-auto text-center">
       <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">Level up your style with our collections</h1>
       <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Discover the Latest Trends and Elevate Your Wardrobe with Our Exclusive Fashion Picks!</p>
       <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
         <a
-          href="<?= BASEURL; ?>/product/men"
+          href="<?= BASEURL . "/product/men"; ?>"
           class="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400"
         >
           Shop Now

@@ -13,46 +13,46 @@
     </button>
   </div>
 
-  <footer class="bg-white">
-    <div class="mx-auto w-full max-w-screen-xl py-4 py-6 lg:py-8">
-      <div class="md:flex md:justify-between">
+  <footer class="bg-gray-100 mt-20">
+    <div class="mx-auto w-full max-w-screen-xl py-6 lg:py-8">
+      <div class="md:flex md:justify-between py-6">
         <div class="mb-6 md:mb-0 -ml-3">
           <a href="<?= BASEURL; ?>">
-            <img src="<?= BASEURL; ?>/images/logo.svg" class="h-14 mr-3" alt="Logo" />
+            <img src="<?= BASEURL . "/images/logo.svg"; ?>" class="h-14 mr-3" alt="Logo" />
           </a>
         </div>
         <div class="w-1/3 grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
           <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Company</h2>
-            <ul class="text-gray-500 font-medium">
+            <ul class="text-gray-500">
               <li class="mb-4">
-                <a href="#" class="hover:underline">About Us</a>
+                <a href="#" class="hover:text-gray-900">About Us</a>
               </li>
               <li class="mb-4">
-                <a href="#" class="hover:underline">Contact</a>
+                <a href="#" class="hover:text-gray-900">Contact</a>
               </li>
               <li>
-                <a href="#" class="hover:underline">Affiliates</a>
+                <a href="#" class="hover:text-gray-900">Affiliates</a>
               </li>
             </ul>
           </div>
           <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Help</h2>
-            <ul class="text-gray-500 font-medium">
+            <ul class="text-gray-500">
               <li class="mb-4">
-                <a href="#" class="hover:underline">FAQ</a>
+                <a href="#" class="hover:text-gray-900">FAQ</a>
               </li>
               <li class="mb-4">
-                <a href="#" class="hover:underline">Return Policy</a>
+                <a href="#" class="hover:text-gray-900">Return Policy</a>
               </li>
               <li>
-                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:text-gray-900">Privacy Policy</a>
               </li>
             </ul>
           </div>
           <div>
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Social Media</h2>
-            <ul class="text-gray-500 font-medium">
+            <ul class="text-gray-500">
               <li class="mb-4">
                 <a href="#" class="text-gray-500 flex items-center hover:text-gray-900">
                   <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
