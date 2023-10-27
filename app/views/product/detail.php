@@ -32,7 +32,7 @@
   
   <div class="grid grid-cols-5 p-0 gap-2">
     <div class="col-span-2 flex justify-center">
-      <img class="w-[80%] rounded-lg object-center" src="<?= BASEURL . "/images/uploads/" . $data['product']['image']; ?>" alt="<?= $data['product']['product_name']; ?>" />
+      <img class="w-[80%] rounded-lg object-center" src="<?= BASEURL . "/images/uploads/products/" . $data['product']['image']; ?>" alt="<?= $data['product']['product_name']; ?>" />
     </div>
     <div class="col-span-3 my-8">
       <h1 class="font-semibold text-3xl text-gray-900"><?= $data['product']['product_name']; ?></h1>
