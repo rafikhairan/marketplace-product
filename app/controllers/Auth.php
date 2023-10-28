@@ -40,6 +40,7 @@
 
       if($user && password_verify($_POST['password'], $user['password'])) {
         $_SESSION['user_logged'] = [
+          'id' => $user['id'],
           'name' => $user['name'],
           'email' => $user['email']
         ];

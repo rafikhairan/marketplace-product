@@ -48,7 +48,10 @@
         <span class="w-1 h-1 mx-1.5 bg-gray-500 rounded-full"></span>
         <a href="#" class="text-sm font-medium text-gray-900 underline hover:no-underline">73 reviews</a>
       </div>
-      <a href="" class="bg-[#0b7c56] text-white rounded-md py-3 px-4 mt-10 inline-block">Buy this item</a>
+      <h1 class="mt-8 text-4xl font-semibold"><?= formatRupiah($data['product']['price']); ?></h1>
+      <div class="grid grid-cols-2 mt-10 gap-x-5">
+        <button type="button" class="bg-[#0b7c56] hover:bg-[#085843] text-white rounded-lg py-3 px-4 focus:ring-[#5dbb8a] focus:ring-2 focus:outline-none">+ Add to Cart</button>
+      </div>
     </div>
   </div>
 </main>

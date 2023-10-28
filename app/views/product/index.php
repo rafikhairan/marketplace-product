@@ -42,13 +42,6 @@
 				<li>
 					<a href="<?= BASEURL . "/product/" . strtolower($data['title']) . "/" . $page; ?>" class="flex items-center justify-center px-2 <?= $data['current_page'] === $page ? "pb-1 border-b-[3px] border-[#0b7c56] text-[#0b7c56]" : "text-gray-500 hover:text-[#0b7c56] h-7"; ?> font-semibold"><?= $page; ?></a>
 				</li>
-				<?php if($data['total_page'] >= 5 && $page === 4) : ?>
-					<span>...</span>
-					<li>
-						<a href="<?= BASEURL . "/product/" . strtolower($data['title']) . "/" . $page; ?>" class="flex items-center justify-center px-2 <?= $data['current_page'] === $page ? "pb-1 border-b-[3px] border-[#0b7c56] text-[#0b7c56]" : "text-gray-500 hover:text-[#0b7c56] h-7"; ?> font-semibold"><?= $data['total_page']; ?></a>
-					</li>
-					<?php break; ?>
-				<?php endif ?>
 			<?php endfor ?>
 		</ul>
 		<?php if($data['current_page'] < $data['total_page']) : ?>

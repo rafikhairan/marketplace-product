@@ -1,21 +1,24 @@
-  <div id="drawer-right" class="fixed top-0 right-0 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-80 z-50" tabindex="-1" aria-labelledby="drawer-right">
-    <h5 id="drawer-right" class="inline-flex items-center mb-4 text-base font-semibold text-gray-500">Cart</h5>
-    <button
-      type="button"
-      data-drawer-hide="drawer-right"
-      aria-controls="drawer-right"
-      class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center"
-    >
-      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-      </svg>
-      <span class="sr-only">Close menu</span>
-    </button>
+  <div id="cart" class="fixed z-50 h-screen py-4 px-5 overflow-y-auto bg-white w-96 translate-x-full" tabindex="-1" aria-labelledby="cart">
+    <div class="flex justify-between items-center mb-4">
+      <h3 id="cart" class="text-2xl font-semibold text-gray-900">Cart</h3>
+      <button id="cart-hide-button" type="button" aria-controls="cart" class="text-gray-500 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex items-center justify-center -mr-2" >
+        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+        </svg>
+        <span class="sr-only">Close menu</span>
+      </button>
+    </div>
+    <div id="cart-products" class="h-[83%] overflow-auto">
+
+    </div>
+    <div class="grid mt-6">
+      <button type="button" class="bg-[#0b7c56] hover:bg-[#085843] text-white rounded-lg py-2 focus:ring-[#5dbb8a] focus:ring-2 focus:outline-none">+ Add to Cart</button>
+		</div>
   </div>
 
-  <button type="button" class="rounded-full fixed bottom-10 right-10 h-12 w-12 transition duration-200 hidden bg-[#0b7c56] hover:bg-[#085843]" id="scroll-top">
+  <button type="button" class="rounded-full fixed bottom-10 right-10 h-12 w-12 transition duration-200 hidden bg-[#0b7c56] hover:bg-[#085843]" id="scroll-top" onclick="scrollToTop()">
     <svg class="w-5 h-5 text-white m-auto" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 8">
-      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"/>
+      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7 7.674 1.3a.91.91 0 0 0-1.348 0L1 7"/>
     </svg>
   </button>
 
@@ -89,6 +92,7 @@
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="<?= BASEURL . "/js/main.js"; ?>"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@
 
     public function getUserByEmail($email)
     {
-      $query = "SELECT email, name, password FROM $this->table WHERE email = :email";
+      $query = "SELECT id, email, name, password FROM $this->table WHERE email = :email";
 
       $this->db->query($query);
       $this->db->bind('email', $email);
