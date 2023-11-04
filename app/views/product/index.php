@@ -4,7 +4,7 @@
   <div class="grid grid-cols-4 gap-4">
     <?php foreach($data['products'] as $product): ?>
       <div class="relative rounded-xl shadow transition hover:-translate-y-2 hover:shadow-lg">
-				<img class="h-full w-full object-cover rounded-2xl p-2" src="<?= BASEURL . "/images/uploads/products/" . $product['image']; ?>" alt="<?= $product['product_name']; ?>" />
+				<img class="aspect-square object-top object-cover rounded-2xl p-2" src="<?= BASEURL . "/images/uploads/products/" . $product['image']; ?>" alt="<?= $product['product_name']; ?>" />
 				<div class="absolute bottom-0 p-4 w-full">
 					<div class="bg-white py-2 px-3 rounded-lg">
 						<h5><?= truncateString($product['product_name']); ?></h5>

@@ -1,4 +1,4 @@
-  <div id="cart" class="fixed z-50 h-screen py-4 px-5 overflow-y-auto bg-white w-96 translate-x-full" tabindex="-1" aria-labelledby="cart">
+  <div id="cart" class="fixed z-50 h-screen py-4 px-5 overflow-y-auto bg-white w-96 translate-x-full flex flex-col" tabindex="-1" aria-labelledby="cart" <?= isset($data['cart_id']) ? "data-cart-id=" . $data['cart_id'] : ""; ?>>
     <div class="flex justify-between items-center mb-4">
       <h3 id="cart" class="text-2xl font-semibold text-gray-900">Cart</h3>
       <button id="cart-hide-button" type="button" aria-controls="cart" class="text-gray-500 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 inline-flex items-center justify-center -mr-2" >
@@ -8,12 +8,9 @@
         <span class="sr-only">Close menu</span>
       </button>
     </div>
-    <div id="cart-products" class="h-[83%] overflow-auto">
+    <div id="cart-products">
 
     </div>
-    <div class="grid mt-6">
-      <button type="button" class="bg-[#0b7c56] hover:bg-[#085843] text-white rounded-lg py-2 focus:ring-[#5dbb8a] focus:ring-2 focus:outline-none">+ Add to Cart</button>
-		</div>
   </div>
 
   <button type="button" class="rounded-full fixed bottom-10 right-10 h-12 w-12 transition duration-200 hidden bg-[#0b7c56] hover:bg-[#085843]" id="scroll-top" onclick="scrollToTop()">

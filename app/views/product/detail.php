@@ -30,13 +30,13 @@
     </ol>
   </nav>
   
-  <div class="grid grid-cols-5 p-0 gap-2">
-    <div class="col-span-2 flex justify-center">
-      <img class="w-[80%] rounded-lg object-center" src="<?= BASEURL . "/images/uploads/products/" . $data['product']['image']; ?>" alt="<?= $data['product']['product_name']; ?>" />
+  <div class="grid grid-cols-5 gap-7 items-center">
+    <div class="col-span-2">
+      <img class="aspect-square object-top object-cover" src="<?= BASEURL . "/images/uploads/products/" . $data['product']['image']; ?>" alt="<?= $data['product']['product_name']; ?>" />
     </div>
-    <div class="col-span-3 my-8">
-      <h1 class="font-semibold text-3xl text-gray-900"><?= $data['product']['product_name']; ?></h1>
-      <p class="text-xs text-gray-500 mt-1">H&M Premium Selection</p>
+    <div class="col-span-3">
+      <h1 id="product" class="font-semibold text-3xl text-gray-900" data-product-id="<?= $data['product']['id']; ?>" data-price="<?= $data['product']['price']; ?>"><?= $data['product']['product_name']; ?></h1>
+      <p class="text-xs text-gray-500 mt-1">Premium Selection</p>
       <h5 class="my-6"><?= $data['product']['description']; ?></h5>
       <div class="flex items-center">
         <svg class="w-4 h-4 text-yellow-300 mr-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
@@ -49,8 +49,22 @@
         <a href="#" class="text-sm font-medium text-gray-900 underline hover:no-underline">73 reviews</a>
       </div>
       <h1 class="mt-8 text-4xl font-semibold"><?= formatRupiah($data['product']['price']); ?></h1>
+      <div class="inline-flex mt-8" role="group">
+        <button type="button" class="px-3 font-medium text-gray-900 bg-white border border-gray-200 rounded-l hover:bg-gray-100 focus:ring-0" onclick="decrementQuantity(this)">
+          -
+        </button>
+        <input type="number" class="border-gray-200 w-11 text-center text-sm focus:ring-0 focus:border-gray-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" name="quantity" value="1" onkeyup="handleQuantityChange(this)" />
+        <button type="button" class="px-3 font-medium text-gray-900 bg-white border border-gray-200 rounded-r hover:bg-gray-100 focus:ring-0" onclick="incrementQuantity(this)">
+          +
+        </button>
+			</div>
       <div class="grid grid-cols-2 mt-10 gap-x-5">
-        <button type="button" class="bg-[#0b7c56] hover:bg-[#085843] text-white rounded-lg py-3 px-4 focus:ring-[#5dbb8a] focus:ring-2 focus:outline-none">+ Add to Cart</button>
+        <button type="button" class="bg-[#0b7c56] hover:bg-[#085843] text-white rounded-lg py-2 flex items-center justify-center focus:ring-[#5dbb8a] focus:ring-2 focus:outline-none" onclick="storeProductToCart()">
+          <svg class="w-5 h-5 text-white mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm1-4H5m0 0L3 4m0 0h5.501M3 4l-.792-3H1m11 3h6m-3 3V1"/>
+          </svg>
+          Add to Cart
+        </button>
       </div>
     </div>
   </div>

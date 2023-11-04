@@ -33,16 +33,19 @@
       </div>
       <?php if(isset($_SESSION['user_logged'])): ?>
         <div class="flex items-center">
-          <ul class="flex items-center">
-            <li class="cursor-pointer mr-7" aria-controls="cart" id="cart-show-button">
-              <svg class="w-5 h-5 text-gray-900 hover:text-[#0b7c56]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
-              </svg>
-            </li>
+          <ul class="flex">
             <li class="cursor-pointer mr-7">
-              <svg class="w-5 h-5 text-gray-900 hover:text-[#0b7c56]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 21">
+              <svg class="w-6 h-6 text-gray-900 hover:text-[#0b7c56]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 21">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 3.464V1.1m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175C15 15.4 15 16 14.462 16H1.538C1 16 1 15.4 1 14.807c0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 8 3.464ZM4.54 16a3.48 3.48 0 0 0 6.92 0H4.54Z"/>
               </svg>
+            </li>
+            <li class="mr-7">
+              <button class="flex items-center relative" type="button" aria-controls="cart" id="cart-show-button">
+                <svg class="w-6 h-6 text-gray-900 hover:text-[#0b7c56]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 15a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm0 0h8m-8 0-1-4m9 4a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-9-4h10l2-7H3m2 7L3 4m0 0-.792-3H1"/>
+                </svg>
+                <div id="total-quantity" class="absolute inline-flex items-center justify-center text-[10px] text-white bg-red-500 rounded-full -top-2 hidden"></div>
+              </button>
             </li>
           </ul>
           <button

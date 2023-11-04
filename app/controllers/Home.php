@@ -1,6 +1,16 @@
 <?php
   class Home extends Controller 
   {
+    protected $data;
+
+    public function __construct()
+    {
+      if(isset($_SESSION['user_logged'])) {
+        $cart = $this->model('Cart_model')->getCartID($_SESSION['user_logged']['id']);
+        $this->data['cart_id'] = $cart['id'];
+      }
+    }
+
     public function index() 
     {
       if(isset($_COOKIE['user_logged']) && !isset($_SESSION['user_logged'])) {
@@ -19,10 +29,10 @@
         ];
       }
 
-      $data['title'] = 'Home';
+      $this->data['title'] = 'Home';
 
-      $this->view('layout/main/header', $data);
+      $this->view('layout/main/header', $this->data);
       $this->view('home/index');
-      $this->view('layout/main/footer');
+      $this->view('layout/main/footer', $this->data);
     }
   }
