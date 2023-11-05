@@ -6,7 +6,7 @@
     <span class="text-gray-400 font-medium ml-4 text-sm">Admin</span>
   </div>
   <div class="p-6">
-    <h3 class="font-semibold text-2xl text-gray-900 mb-6"><?= ucwords($data['title']); ?></h3>
+    <h3 class="font-semibold text-2xl text-gray-900 mb-6"><?= ucwords($data['category']); ?></h3>
     <div class="mb-6">
       <?php Flasher::flash() ?>
     </div>

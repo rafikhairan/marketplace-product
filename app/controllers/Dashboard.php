@@ -3,9 +3,12 @@
   {
     public function index() 
     {
-      $data['users'] = $this->model('User_model')->getAllUsers();
+      $data = [
+        'title' => 'Dashboard',
+        'carts' => $this->model('Cart_model')->getCartAdmin()
+      ];
 
-      $this->view('layout/dashboard/header');
+      $this->view('layout/dashboard/header', $data);
       $this->view('dashboard/index', $data);
       $this->view('layout/dashboard/footer');
     }
@@ -26,20 +29,24 @@
       }
 
       $data = [
-        'title' => $category,
+        'title' => 'Products',
+        'category' => $category,
         'products' => $this->model('Product_model')->getAllProductByCategory($category_id),
       ];
 
-      $this->view('layout/dashboard/header');
+      $this->view('layout/dashboard/header', $data);
       $this->view('dashboard/products', $data);
       $this->view('layout/dashboard/footer');
     }
 
     public function categories()
     {
-      $data['categories'] = $this->model('Category_model')->getAllCategories();
+      $data = [
+        'title' => 'Categories',
+        'categories' => $this->model('Category_model')->getAllCategories()
+      ];
 
-      $this->view('layout/dashboard/header');
+      $this->view('layout/dashboard/header', $data);
       $this->view('dashboard/categories', $data);
       $this->view('layout/dashboard/footer');
     }
@@ -76,9 +83,12 @@
 
     public function createProduct()
     {
-      $data['categories'] = $this->model('Category_model')->getAllCategories();
+      $data = [
+        'title' => 'Products',
+        'categories' => $this->model('Category_model')->getAllCategories()
+      ];
 
-      $this->view('layout/dashboard/header');
+      $this->view('layout/dashboard/header', $data);
       $this->view('dashboard/create_product', $data);
       $this->view('layout/dashboard/footer');
     }
@@ -102,11 +112,12 @@
     public function editProduct($category_id)
     {
       $data = [
+        'title' => 'Products',
         'categories' => $this->model('Category_model')->getAllCategories(),
         'product' => $this->model('Product_model')->getProductById($category_id)
       ];
 
-      $this->view('layout/dashboard/header');
+      $this->view('layout/dashboard/header', $data);
       $this->view('dashboard/edit_product', $data);
       $this->view('layout/dashboard/footer');
     }
@@ -149,5 +160,18 @@
 
       header('Location: ' . BASEURL . '/dashboard/products/' . strtolower($category['category_name']));
       exit;
+    }
+
+    public function cart($user_id)
+    {
+      $data = [
+        'title' => 'Dashboard',
+        'products' => $this->model('Cart_model')->getProductsFromCart($user_id)
+      ];
+
+      
+      $this->view('layout/dashboard/header', $data);
+      $this->view('dashboard/cart', $data);
+      $this->view('layout/dashboard/footer');
     }
   }

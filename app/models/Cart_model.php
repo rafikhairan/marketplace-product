@@ -14,7 +14,7 @@
 
     public function getProductsFromCart($user_id)
     {
-      $query = "SELECT $this->relation_one.product_name, $this->relation_one.price, $this->relation_one.image, $this->pivot_table.product_id, $this->pivot_table.quantity FROM $this->relation_one JOIN $this->pivot_table ON $this->relation_one.id = $this->pivot_table.product_id WHERE $this->pivot_table.cart_id = (SELECT id FROM $this->table WHERE $this->table.user_id = :user_id)";
+      $query = "SELECT products.product_name, products.price, products.image, pivot_table.product_id, pivot_table.quantity, pivot_table.subtotal FROM $this->relation_one products JOIN $this->pivot_table pivot_table ON products.id = pivot_table.product_id WHERE pivot_table.cart_id = (SELECT id FROM $this->table users WHERE users.user_id = :user_id)";
 
       $this->db->query($query);
       $this->db->bind('user_id', $user_id);
@@ -33,7 +33,7 @@
       return $this->db->rowCount();
     }
 
-    public function getCartID($user_id)
+    public function getCartId($user_id)
     {
       $query = "SELECT id FROM $this->table WHERE user_id = :user_id";
 
@@ -43,12 +43,12 @@
       return $this->db->single();
     }
 
-    public function storePivotTable($data)
+    public function storePivotTable($cart_id, $data)
     {
-      $query = "INSERT INTO $this->pivot_table VALUES (:cart_id, :product_id, :quantity, :subtotal)";
+      $query = "INSERT INTO $this->pivot_table (cart_id, product_id, quantity, subtotal) VALUES (:cart_id, :product_id, :quantity, :subtotal)";
 
       $this->db->query($query);
-      $this->db->bind('cart_id', $data['cart_id']);
+      $this->db->bind('cart_id', $cart_id);
       $this->db->bind('product_id', $data['product_id']);
       $this->db->bind('quantity', $data['quantity']);
       $this->db->bind('subtotal', $data['subtotal']);
@@ -57,11 +57,11 @@
       return $this->db->rowCount();
     }
 
-    public function updateCart($data) {
+    public function updateCart($cart_id, $data) {
       $query = "UPDATE $this->pivot_table SET quantity = :quantity, subtotal = :subtotal WHERE cart_id = :cart_id AND product_id = :product_id";
 
       $this->db->query($query);
-      $this->db->bind('cart_id', $data['cart_id']);
+      $this->db->bind('cart_id', $cart_id);
       $this->db->bind('product_id', $data['product_id']);
       $this->db->bind('quantity', $data['quantity']);
       $this->db->bind('subtotal', $data['subtotal']);
@@ -101,11 +101,11 @@
       return $this->db->rowCount();
     }
 
-    public function productInCart($data) {
+    public function productInCart($cart_id, $data) {
       $query = "SELECT * FROM $this->pivot_table WHERE cart_id = :cart_id AND product_id = :product_id";
 
       $this->db->query($query);
-      $this->db->bind('cart_id', $data['cart_id']);
+      $this->db->bind('cart_id', $cart_id);
       $this->db->bind('product_id', $data['product_id']);
 
       return $this->db->single();
@@ -118,5 +118,14 @@
       $this->db->bind('cart_id', $cart_id);
 
       return $this->db->single();
+    }
+
+    public function getCartAdmin()
+    {
+      $query = "SELECT carts.*, users.name, users.email, users.no_telpon, users.alamat FROM $this->table carts JOIN $this->relation_two users ON carts.user_id = users.id WHERE users.name != 'Admin'";
+
+      $this->db->query($query);
+
+      return $this->db->resultSet();
     }
   }

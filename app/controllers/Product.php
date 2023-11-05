@@ -6,8 +6,11 @@
     public function __construct()
     {
       if(isset($_SESSION['user_logged'])) {
-        $cart = $this->model('Cart_model')->getCartID($_SESSION['user_logged']['id']);
-        $this->data['cart_id'] = $cart['id'];
+        $cart = $this->model('Cart_model')->getCartId($_SESSION['user_logged']['id']);
+
+        if($cart) {
+          $this->data['cart_id'] = $cart['id'];
+        }
       }
     }
 

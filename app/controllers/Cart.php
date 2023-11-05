@@ -6,7 +6,7 @@
     public function __construct()
     {
       if(isset($_SESSION['user_logged'])) {
-        $this->cart = $this->model('Cart_model')->getCartID($_SESSION['user_logged']['id']);
+        $this->cart = $this->model('Cart_model')->getCartId($_SESSION['user_logged']['id']);
       }
     }
 
@@ -23,20 +23,20 @@
     public function store() 
     {
       $data = json_decode(file_get_contents("php://input"), true);
-      
+
       if(!$this->cart) {
         $this->model('Cart_model')->createCart($_SESSION['user_logged']['id']);
-        $this->cart = $this->model('Cart_model')->getCartID($_SESSION['user_logged']['id']);
+        $this->cart = $this->model('Cart_model')->getCartId($_SESSION['user_logged']['id']);
       }
       
-      $productInCart = $this->model('Cart_model')->productInCart($data);
+      $productInCart = $this->model('Cart_model')->productInCart($this->cart['id'], $data);
 
       if($productInCart) {
-        $this->model('Cart_model')->updateCart($data);
+        $this->model('Cart_model')->updateCart($this->cart['id'], $data);
         exit;
       }
 
-      $this->model('Cart_model')->storePivotTable($data);
+      $this->model('Cart_model')->storePivotTable($this->cart['id'], $data);
     }
 
     public function update() {

@@ -26,12 +26,16 @@
 
       if(!$registered) {
         $this->model('User_model')->createUser($_POST);
-        Flasher::setFlash('green', '<span class="font-medium">Registration successful!</span> Please login to your account');
+
+        $user = $this->model('User_model')->getUserByEmail($_POST['email']);
+        $this->model('Cart_model')->createCart($user['id']);
+
+        Flasher::setFlash('green', 'Registration successful! Please login to your account');
         header('Location: ' . BASEURL . '/auth/login');
         exit;    
       }
 
-      Flasher::setFlash('red', '<span class="font-medium">Registration failed!</span> Please check your inputs and try again');
+      Flasher::setFlash('red', 'Registration failed! Please check your inputs and try again');
       header('Location: ' . BASEURL . '/auth/register');
     }
 
@@ -59,7 +63,7 @@
         exit;
       }
 
-      Flasher::setFlash('red', '<span class="font-medium">Login failed!</span> Please check your inputs and try again');
+      Flasher::setFlash('red', 'Login failed! Please check your inputs and try again');
       header('Location: ' . BASEURL . '/auth/login');
     }
 

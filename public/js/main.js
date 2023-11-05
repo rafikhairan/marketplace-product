@@ -97,8 +97,8 @@ async function storeProductToCart() {
 
 		const response = await axios.post(`${baseUrl}/cart/store`, data);
 		console.log(response.data);
-		// renderCart();
-		// cart.show();
+		renderCart();
+		cart.show();
 	} catch (error) {
 		console.log(error);
 	}
@@ -198,20 +198,20 @@ async function renderCart() {
 
 		if (quantity.total >= 1) {
 			totalQuantity.classList.remove("hidden");
+
+			cartProductsEl.innerHTML = /* HTML */ `
+				<form action="${baseUrl / cart}" method="post">
+					<div class="h-[35rem] overflow-auto">${productList}</div>
+					<div class="grid mt-6">
+						<button type="button" class="bg-[#0b7c56] hover:bg-[#085843] text-white font-medium rounded-lg py-2 focus:ring-[#5dbb8a] focus:ring-2 focus:outline-none">Checkout</button>
+					</div>
+				</form>
+			`;
 		} else {
 			totalQuantity.classList.add("hidden");
 		}
 
 		totalQuantity.textContent = quantity.total > 99 ? "99+" : quantity.total;
-
-		cartProductsEl.innerHTML = /* HTML */ `
-			<form action="${baseUrl / cart}" method="post">
-				<div class="h-[35rem] overflow-auto">${productList}</div>
-				<div class="grid mt-6">
-					<button type="button" class="bg-[#0b7c56] hover:bg-[#085843] text-white font-medium rounded-lg py-2 focus:ring-[#5dbb8a] focus:ring-2 focus:outline-none">Checkout</button>
-				</div>
-			</form>
-		`;
 	} catch (error) {
 		console.log(error);
 	}

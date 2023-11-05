@@ -55,7 +55,7 @@
             data-dropdown-placement="bottom"
           >
             <span class="sr-only">Open user menu</span>
-            <img class="w-10 h-10 rounded-full" src="<?= BASEURL; ?>/images/avatar.jpeg" alt="user photo" />
+            <img class="w-10 h-10 rounded-full" src="<?= BASEURL; ?>/images/avatar.jpg" alt="User Photo" />
           </button>
           <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
             <div class="px-4 py-3">
