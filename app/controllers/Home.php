@@ -13,6 +13,7 @@
 
     public function index() 
     {
+
       if(isset($_COOKIE['user_logged']) && !isset($_SESSION['user_logged'])) {
         $user = $this->model('User_model')->getUserByEmail($_COOKIE['user_logged']);
 

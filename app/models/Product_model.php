@@ -10,9 +10,13 @@
       $this->db = new Database;
     }
 
-    public function getAllProductByCategory($category_id, $limit, $offset)
+    public function getAllProductByCategory($category_id, $limit = false, $offset = false)
     {
-      $query = "SELECT * FROM $this->table WHERE category_id = :category_id LIMIT $limit OFFSET $offset";
+      if(!$limit || !$offset) {
+        $query = "SELECT * FROM $this->table WHERE category_id = :category_id";
+      } else {
+        $query = "SELECT * FROM $this->table WHERE category_id = :category_id LIMIT $limit OFFSET $offset";
+      }
 
       $this->db->query($query);
       $this->db->bind('category_id', $category_id);

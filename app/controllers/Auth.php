@@ -42,11 +42,17 @@
         $_SESSION['user_logged'] = [
           'id' => $user['id'],
           'name' => $user['name'],
-          'email' => $user['email']
+          'email' => $user['email'],
+          'is_admin' => $user['is_admin'],
         ];
 
         if(isset($_POST['remember'])) {
           setcookie('user_logged', $user['email'], strtotime("+7 days"), "/");
+        }
+
+        if($user['is_admin']) {
+          header('Location: ' . BASEURL . '/dashboard');
+          exit;
         }
 
         header('Location: ' . BASEURL . '/');

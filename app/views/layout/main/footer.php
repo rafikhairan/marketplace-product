@@ -88,6 +88,7 @@
       </div>
     </div>
   </footer>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="<?= BASEURL . "/js/main.js"; ?>"></script>
