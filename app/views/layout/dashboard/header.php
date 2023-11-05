@@ -21,8 +21,10 @@
     </a>
     <ul class="mt-4">
       <li class="mb-1 group active">
-        <a href="<?= BASEURL . "/dashboard"; ?>" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-          <i class="ri-home-2-line mr-3 text-lg"></i>
+        <a href="<?= BASEURL . "/dashboard"; ?>" class="flex items-center py-3 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+          <svg class="w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8v10a1 1 0 0 0 1 1h4v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5h4a1 1 0 0 0 1-1V8M1 10l9-9 9 9"/>
+          </svg>
           <span class="text-sm">Dashboard</span>
         </a>
       </li>
@@ -31,7 +33,9 @@
           href="#"
           class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100 sidebar-dropdown-toggle"
         >
-          <i class="ri-instance-line mr-3 text-lg"></i>
+          <svg class="w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
+            <path stroke="currentColor" stroke-linejoin="round" stroke-width="1.5" d="M8 8v1h4V8m4 7H4a1 1 0 0 1-1-1V5h14v9a1 1 0 0 1-1 1ZM2 1h16a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1Z"/>
+          </svg>
           <span class="text-sm">Products</span>
           <i class="ri-arrow-right-s-line ml-auto group-[.selected]:rotate-90"></i>
         </a>
@@ -45,11 +49,16 @@
           <li class="mb-4">
             <a href="<?= BASEURL . "/dashboard/products/kid"; ?>" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Kid</a>
           </li>
+          <li class="mb-4">
+            <a href="<?= BASEURL . "/dashboard/createProduct"; ?>" class="text-gray-300 text-sm flex items-center hover:text-gray-100 before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Create Product</a>
+          </li>
         </ul>
       </li>
       <li class="mb-1 group active">
-        <a href="<?= BASEURL . "/dashboard/categories"; ?>" class="flex items-center py-2 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
-          <i class="ri-home-2-line mr-3 text-lg"></i>
+        <a href="<?= BASEURL . "/dashboard/categories"; ?>" class="flex items-center py-3 px-4 text-gray-300 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-gray-800 group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+          <svg class="w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M6 1h10M6 5h10M6 9h10M1.49 1h.01m-.01 4h.01m-.01 4h.01"/>
+          </svg>
           <span class="text-sm">Categories</span>
         </a>
       </li>

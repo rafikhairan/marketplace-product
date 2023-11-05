@@ -43,4 +43,49 @@
 
       return $this->db->single();
     }
+
+    public function deleteProduct($product_id)
+    {
+      $query = "DELETE FROM $this->table WHERE id = :product_id";
+
+      $this->db->query($query);
+      $this->db->bind('product_id', $product_id);
+      $this->db->execute();
+
+      return $this->db->rowCount();
+    }
+
+    public function createProduct($data)
+    {
+      $query = "INSERT INTO $this->table (category_id, product_name, description, stock, price, image) VALUES (:category_id, :product_name, :description, :stock, :price, :image)";
+
+      $this->db->query($query);
+      $this->db->bind('category_id', $data['category']);
+      $this->db->bind('product_name', $data['product_name']);
+      $this->db->bind('description', $data['description']);
+      $this->db->bind('stock', $data['stock']);
+      $this->db->bind('price', $data['price']);
+      $this->db->bind('image', $data['image']);
+      $this->db->execute();
+
+      return $this->db->rowCount();
+    }
+
+    public function updateProduct($product_id, $data)
+    {
+      $query = "UPDATE $this->table SET category_id = :category_id, product_name = :product_name, description = :description, stock = :stock, price = :price, image = :image WHERE id = :product_id";
+
+      $this->db->query($query);
+      $this->db->bind('category_id', $data['category']);
+      $this->db->bind('product_name', $data['product_name']);
+      $this->db->bind('description', $data['description']);
+      $this->db->bind('stock', $data['stock']);
+      $this->db->bind('price', $data['price']);
+      $this->db->bind('image', $data['image']);
+      $this->db->bind('product_id', $product_id);
+
+      $this->db->execute();
+
+      return $this->db->rowCount();
+    }
   }

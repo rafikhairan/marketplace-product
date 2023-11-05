@@ -51,4 +51,14 @@
 
       return $this->db->rowCount();
     }
+
+    public function getCategoryById($category_id)
+    {
+      $query = "SELECT * FROM $this->table WHERE id = :category_id";
+
+      $this->db->query($query);
+      $this->db->bind('category_id', $category_id);
+
+      return $this->db->single();
+    }
   }
