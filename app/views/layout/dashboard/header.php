@@ -11,13 +11,13 @@
   <link rel="stylesheet" href="<?= BASEURL . "/css/dashboard.css"; ?>" />
 </head>
 <body>
-  <div class="fixed left-0 top-0 w-64 h-full bg-gray-100 p-4 z-50 sidebar-menu transition-transform border-r">
+  <div class="fixed left-0 top-0 w-64 h-full bg-gray-100 p-4 z-40 sidebar-menu transition-transform border-r">
     <a href="<?= BASEURL . "/dashboard"; ?>" class="pb-4 border-b border-b-gray-800">
       <img src="<?= BASEURL . "/images/logo.svg"; ?>" class="h-14" alt="Logo" />
     </a>
     <ul class="mt-4">
       <li class="mb-1 group <?= $data['title'] === 'Dashboard' ? 'active' : ''; ?>">
-        <a href="<?= BASEURL . "/dashboard"; ?>" class="flex items-center py-3 px-4 text-gray-500 hover:bg-gray-950 hover:text-gray-100 rounded-md group-[.active]:bg-[#0b7c56] group-[.active]:text-white group-[.selected]:bg-gray-950 group-[.selected]:text-gray-100">
+        <a href="<?= BASEURL . "/dashboard"; ?>" class="flex items-center py-3 px-4 text-gray-500 hover:bg-[#0b7c56] hover:text-gray-100 rounded-md group-[.active]:bg-[#0b7c56] group-[.active]:text-white group-[.selected]:bg-[#085843] group-[.selected]:text-gray-100">
           <svg class="w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8v10a1 1 0 0 0 1 1h4v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5h4a1 1 0 0 0 1-1V8M1 10l9-9 9 9"/>
           </svg>
